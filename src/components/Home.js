@@ -7,10 +7,10 @@ export default function Home() {
         <img src={logo} className="Home-logo" alt="logo" />
         <h1>ShiftAssist</h1>
         <h2>Select station</h2>
-        <button className='Button'>AGT</button>
-        <button className='Button'>BOK</button>
-        <button className='Button'>SPIN</button>
-        <button className='Button'>PKT</button>
-        <button className='Button Button-disabled'>Current Flow</button>
+        <a href='/agt' className='Button'>AGT</a>
+        <a href='/bok' className='Button'>BOK</a>
+        <a href='/spin' className='Button'>SPIN</a>
+        <a href='/pkt' className='Button'>PKT</a>
+        <a href='/flow' className='Button Button-disabled'>Current Flow</a>
     </main>;
 }

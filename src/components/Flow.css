@@ -1,0 +1,84 @@
+:root {
+    --current-agt: 90%;
+    --current-bok: 104%;
+    --current-spin: 111%;
+    --current-pkt: 95%;
+}
+
+.Flow-main {
+    height: 100vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.7) 60%, rgba(255, 255, 255, 0) 100%);
+    backdrop-filter: blur(6px);
+}
+
+.graph {
+    width: 80%;
+    margin: 60px auto;
+}
+
+.graph-section {
+    display: flex;
+    margin: 20px 0;
+}
+
+.graph-section p {
+    margin: auto;
+    margin-right: 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #3440B6;
+}
+
+.graph-bar {
+    background: none;
+    border-radius: 0 30px 30px 0;
+    padding: 10px;
+    width: 40%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: white;
+    text-align: left;
+    position: relative;
+}
+
+.graph-bar::before {
+    content: " ";
+    background: #3440B6;
+    border-radius: 0 30px 30px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.graph-bar-current {
+    background: rgba(0, 161, 225, 0.7);
+    border-radius: 0 30px 30px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: -1;
+}
+
+.current-agt {
+    width: var(--current-agt);
+}
+
+.current-bok {
+    width: var(--current-bok);
+}
+
+.current-spin {
+    width: var(--current-spin);
+}
+
+.current-pkt {
+    width: var(--current-pkt);
+}

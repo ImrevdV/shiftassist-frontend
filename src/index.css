@@ -4,7 +4,7 @@
 }
 
 body {
-  background-image: url(./background.webp);
+  background-image: url(./assets/background.webp);
   background-size: 100vw 100vh;
   background-position: fixed;
   margin: 0;

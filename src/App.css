@@ -1,3 +1,47 @@
 .App {
   text-align: center;
 }
+
+.navigation{
+  width: 100vw;
+  background: white;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.navigation .back{
+  position: absolute;
+  left: 5vw;
+  height: 80%;
+  top: 10%;
+}
+
+.navigation h1{
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 30px;
+color: #ED8C00;
+padding: 10px;
+}
+
+.Button {
+  background: #3440B6;
+  border-radius: 30px;
+  border: none;
+  margin-bottom: 30px;
+  padding: 5px 0;
+  width: 180px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: white;
+  text-decoration: none;
+}
+
+.Disabled{
+  margin-top: 50px;
+  opacity: 0.6;
+  pointer-events: none;
+}

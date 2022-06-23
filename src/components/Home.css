@@ -28,24 +28,3 @@
     color: #E75204;
     margin-bottom: 90px;
   }
-  
-  .Button {
-    background: #3440B6;
-    border-radius: 30px;
-    border: none;
-    margin-bottom: 30px;
-    padding: 5px 0;
-    width: 180px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: white;
-    text-decoration: none;
-  }
-  
-  .Disabled{
-    margin-top: 50px;
-    opacity: 0.6;
-    pointer-events: none;
-  }

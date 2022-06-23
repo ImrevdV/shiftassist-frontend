@@ -11,7 +11,7 @@ import PKT from './components/stations/PKT';
 function App() {
   let component
   switch (window.location.pathname) {
-    default :
+    default:
       component = <Home />
       break
     case "/flow":

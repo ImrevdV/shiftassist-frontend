@@ -4,24 +4,24 @@ import './Station.css';
 
 class AGT extends React.Component {
 
-    state = {totaal: 0, sampling: 0, rc: 0, pallets: 0, retour: 0};
+    state = { totaal: 0, sampling: 0, rc: 0, pallets: 0, retour: 0 };
 
     setValue = event => {
         switch (event.target.name) {
             case "sampling":
-                this.setState({sampling: event.target.value});
+                this.setState({ sampling: event.target.value });
                 break;
             case "rc":
-                this.setState({rc: event.target.value});
+                this.setState({ rc: event.target.value });
                 break;
             case "pallets":
-                this.setState({pallets: event.target.value});
+                this.setState({ pallets: event.target.value });
                 break;
             case "retour":
-                this.setState({retour: event.target.value});
+                this.setState({ retour: event.target.value });
                 break;
         }
-        this.setState({totaal: this.state.sampling * 10 + this.state.rc * 10 + this.state.retour * 10 + this.state.pallets * 11});
+        this.setState({ totaal: this.state.sampling * 10 + this.state.rc * 10 + this.state.retour * 10 + this.state.pallets * 11 });
         console.log(this.state.totaal);
     }
 
@@ -54,8 +54,8 @@ class AGT extends React.Component {
                 <a className='submitButton' href='/home'><button className='Button'>Submit</button></a>
             </main>
         )
-        
+
     }
 }
-    
+
 export default AGT;

@@ -2,27 +2,27 @@
   text-align: center;
 }
 
-.navigation{
+.navigation {
   width: 100vw;
   background: white;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 
-.navigation .back{
+.navigation .back {
   position: absolute;
   left: 5vw;
   height: 80%;
   top: 10%;
 }
 
-.navigation h1{
-font-style: normal;
-font-weight: 700;
-font-size: 25px;
-line-height: 30px;
-color: #ED8C00;
-padding: 10px;
+.navigation h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  color: #ED8C00;
+  padding: 10px;
 }
 
 .Button {
@@ -41,28 +41,28 @@ padding: 10px;
   cursor: pointer;
 }
 
-.Disabled{
+.Disabled {
   margin-top: 50px;
   opacity: 0.6;
   pointer-events: none;
 }
 
 .header {
-    width: 70%;
-    border-bottom: 1px solid #ADB5C5;
-    margin: 0 auto;
-    display: flex;
-    padding: 10px 5%;
+  width: 70%;
+  border-bottom: 1px solid #ADB5C5;
+  margin: 0 auto;
+  display: flex;
+  padding: 10px 5%;
 }
 
 .header p {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
-    color: #ED8C00;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ED8C00;
 }
 
 .header .rightp {
-    margin-left: auto;
+  margin-left: auto;
 }

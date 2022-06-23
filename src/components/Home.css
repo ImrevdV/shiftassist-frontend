@@ -44,7 +44,8 @@
     text-decoration: none;
   }
   
-  .Button-disabled{
+  .Disabled{
     margin-top: 50px;
     opacity: 0.6;
+    pointer-events: none;
   }

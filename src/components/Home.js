@@ -11,6 +11,6 @@ export default function Home() {
         <a href='/bok' className='Button'>BOK</a>
         <a href='/spin' className='Button'>SPIN</a>
         <a href='/pkt' className='Button'>PKT</a>
-        <a href='/flow' className='Button Button-disabled'>Current Flow</a>
+        <a href='/flow' className='Button Disabled'>Current Flow</a>
     </main>;
 }

@@ -1,0 +1,36 @@
+.Station-main {
+    height: 100vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.7) 60%, rgba(255, 255, 255, 0) 100%);
+    backdrop-filter: blur(6px);
+}
+
+.header {
+    width: 70%;
+    border-bottom: 1px solid #ADB5C5;
+    margin: 0 auto;
+    display: flex;
+    padding: 10px 5%;
+}
+
+.header p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #ED8C00;
+}
+
+.header .rightp {
+    margin-left: auto;
+}
+
+.Station-main input {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #ADB5C5;
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px solid #ADB5C5;
+    border-radius: 10px;
+}

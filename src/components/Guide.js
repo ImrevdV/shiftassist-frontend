@@ -28,16 +28,16 @@ class Guide extends React.Component {
     render() {
         return (
             <main className="Guide-main">
-            <nav className='navigation'>
-                <a href='/home'><img src={back} className="back" alt="back arrow" /></a>
-                <h1>Guide</h1>
-            </nav>
-            <h2> {this.state.title}</h2>
-            <p> {this.state.description}</p>
-            <button type="button" onClick={this.showFirst}>1</button>
-            <button type="button" onClick={this.showSecond}>2</button>
-            <button type="button" onClick={this.showThird}>3</button>
-        </main>
+              <nav className='navigation'>
+                  <a href='/home'><img src={back} className="back" alt="back arrow" /></a>
+                  <h1>Guide</h1>
+              </nav>
+              <h2> {this.state.title}</h2>
+              <p> {this.state.description}</p>
+              <button type="button" onClick={this.showFirst}>1</button>
+              <button type="button" onClick={this.showSecond}>2</button>
+              <button type="button" onClick={this.showThird}>3</button>
+          </main>
         );
     }
 }

@@ -9,22 +9,6 @@ class AGT extends React.Component {
     setValue = event => {
         switch (event.target.name) {
             case "sampling":
-<<<<<<< HEAD
-                this.setState({ sampling: event.target.value });
-                break;
-            case "rc":
-                this.setState({ rc: event.target.value });
-                break;
-            case "pallets":
-                this.setState({ pallets: event.target.value });
-                break;
-            case "retour":
-                this.setState({ retour: event.target.value });
-                break;
-        }
-        this.setState({ totaal: this.state.sampling * 10 + this.state.rc * 10 + this.state.retour * 10 + this.state.pallets * 11 });
-        console.log(this.state.totaal);
-=======
                 this.setState({sampling: event.target.value});
                 sessionStorage.setItem('AGT_sampling', event.target.value);
                 break;
@@ -45,7 +29,6 @@ class AGT extends React.Component {
             sessionStorage.setItem('AGT_totaal', this.state.totaal);
         });
         
->>>>>>> master
     }
 
     render() {

@@ -8,11 +8,17 @@ class Flow extends React.Component {
     state = { currentAGT: 0, currentBOK: 0, currentSPIN: 0, currentPKT: 0 };
     s = 0;
 
+    getTestDataLength = () => {
+        const BASE_URL = "http://localhost:8000/api/itemdetection";
+        axios.get(BASE_URL).then(res => {
+            return res.data;
+        });
+    }
+
     checkAPI = () => {
-        var s = this.s;
-        console.log(s);
+        console.log(this.s);
         const BASE_URL = "http://localhost:8000/api/itemdetection/";
-        axios.get(BASE_URL + s).then(res => {
+        axios.get(BASE_URL + this.s).then(res => {
             if (res.data != null) {
                 for (let i = 0; i < res.data.length; i++) {
                     var station = res.data[i].station;
@@ -34,13 +40,7 @@ class Flow extends React.Component {
                 }           
             }
         });
-        if (s > 113) {
-            clearInterval(this.interval);
-        }
-        else {
-            s++;
-            this.s = s;
-        }
+        this.s++;
     }
 
     setGraphWidths = () => {
@@ -86,24 +86,27 @@ class Flow extends React.Component {
         document.documentElement.style.setProperty('--current-bok', `${currentBOK_width}%`)
         document.documentElement.style.setProperty('--current-spin', `${currentSPIN_width}%`)
         document.documentElement.style.setProperty('--current-pkt', `${currentPKT_width}%`)
-
-        console.log(this.state);
     }
 
-    componentDidMount() {
+    onload = event => {
+        event.preventDefault();
         this.interval = window.setInterval(this.checkAPI, 1000);
+        
         //this.checkAPI();
     }
 
     render() {
         this.setGraphWidths();
+        if (this.s > this.getTestDataLength) {
+            clearInterval(this.interval);
+        }
         var AGT_diff = parseInt(sessionStorage.getItem('AGT_diff'));
         var BOK_diff = parseInt(sessionStorage.getItem('BOK_diff'));
         var PKT_diff = parseInt(sessionStorage.getItem('PKT_diff'));
         var SPIN_diff = parseInt(sessionStorage.getItem('SPIN_diff'));
 
         return (
-            <main className="Flow-main">
+            <main className="Flow-main" onLoad={this.onload}>
                 <nav className='navigation'>
                     <a href='/home'><img src={back} className="back" alt="back arrow" /></a>
                     <h1>Current Flow</h1>

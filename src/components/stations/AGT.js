@@ -20,10 +20,10 @@ class AGT extends React.Component {
             case "retour":
                 this.setState({retour: event.target.value});
                 break;
-        }
+        };
         this.setState({totaal: this.state.sampling * 10 + this.state.rc * 10 + this.state.retour * 10 + this.state.pallets * 11});
         console.log(this.state.totaal);
-    }
+    };
 
     render() {
         return (
@@ -33,7 +33,7 @@ class AGT extends React.Component {
                     <h1>AGT</h1>
                 </nav>
                 <header className='header'>
-                    <p>type</p> <p className='rightp'>amount</p>
+                    <p>Type</p> <p className='rightp'>Amount</p>
                 </header>
                 <section className='inputLine'>
                     <label htmlFor="sampling">Sampling</label>

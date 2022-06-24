@@ -4,25 +4,30 @@ import './Station.css';
 
 class PKT extends React.Component {
 
-    state = {totaal: 0, sampling: 0, rc: 0, pallets: 0, retour: 0};
+    state = {totaal: 0, ROW: 0, wittekaarten: 0, mx5: 0, HAGB: 0, HAGO: 0, transit: 0};
 
     setValue = event => {
         switch (event.target.name) {
-            case "sampling":
-                this.setState({sampling: event.target.value});
+            case "ROW":
+                this.setState({ROW: event.target.value});
                 break;
-            case "rc":
+            case "wittekaarten":
                 this.setState({rc: event.target.value});
                 break;
-            case "pallets":
-                this.setState({pallets: event.target.value});
+            case "mx5":
+                this.setState({mx5: event.target.value});
                 break;
-            case "retour":
-                this.setState({retour: event.target.value});
+            case "HAGB":
+                this.setState({HAGB: event.target.value});
                 break;
-        }
-        this.setState({totaal: this.state.sampling * 10 + this.state.rc * 10 + this.state.retour * 10 + this.state.pallets * 11});
-        console.log(this.state.totaal);
+            case "HAGO":
+                this.setState({HAGO: event.target.value});
+                break;
+            case "transit":
+                this.setState({transit: event.target.value});
+                break;
+        };
+        this.setState({totaal: this.state.ROW * 30 + this.state.wittekaarten * 24 + this.state.HAGB * 30 + this.state.mx5 * 6 + this.state.HAGO * 30 + this.state.transit * 30});
     }
 
     render() {
@@ -33,23 +38,31 @@ class PKT extends React.Component {
                     <h1>PKT</h1>
                 </nav>
                 <header className='header'>
-                    <p>type</p> <p className='rightp'>amount</p>
+                    <p>Type</p> <p className='rightp'>Amount</p>
                 </header>
                 <section className='inputLine'>
-                    <label htmlFor="sampling">Sampling</label>
-                    <input type="number" id="sampling" name="sampling" min="0" max="999" placeholder="0" onChange={this.setValue}></input>
+                    <label htmlFor="ROW">ROW</label>
+                    <input type="number" id="ROW" name="ROW" min="0" max="999" placeholder="0" onChange={this.setValue}></input>
                 </section>
                 <section className='inputLine'>
-                    <label htmlFor="rc">RC's gericht</label>
-                    <input type="number" id="rc" name="rc" min="0" max="999" placeholder="0" onChange={this.setValue}></input>
+                    <label htmlFor="wittekaarten">Witte kaarten</label>
+                    <input type="number" id="wittekaarten" name="wittekaarten" min="0" max="999" placeholder="0" onChange={this.setValue}></input>
                 </section>
                 <section className='inputLine'>
-                    <label htmlFor="pallets">Pallets gericht</label>
-                    <input type="number" id="pallets" name="pallets" min="0" max="999" placeholder="0" onChange={this.setValue}></input>
+                    <label htmlFor="mx5">MX5</label>
+                    <input type="number" id="mx5" name="mx5" min="0" max="999" placeholder="0" onChange={this.setValue}></input>
                 </section>
                 <section className='inputLine'>
-                    <label htmlFor="retour">Retouren UD</label>
-                    <input type="number" id="retour" name="retour" min="0" max="999" placeholder="0" onChange={this.setValue}></input>
+                    <label htmlFor="HAGB">HAGB</label>
+                    <input type="number" id="HAGB" name="HAGB" min="0" max="999" placeholder="0" onChange={this.setValue}></input>
+                </section>
+                <section className='inputLine'>
+                    <label htmlFor="HAGO">HAGO</label>
+                    <input type="number" id="HAGO" name="HAGO" min="0" max="999" placeholder="0" onChange={this.setValue}></input>
+                </section>
+                <section className='inputLine'>
+                    <label htmlFor="transit">Transit</label>
+                    <input type="number" id="transit" name="transit" min="0" max="999" placeholder="0" onChange={this.setValue}></input>
                 </section>
                 <a className='submitButton' href='/home'><button className='Button'>Submit</button></a>
             </main>

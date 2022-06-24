@@ -1,10 +1,47 @@
 import React from 'react';
+import axios from "axios";
 import back from '../assets/arrow-back.svg';
 import './Flow.css';
 
 class Flow extends React.Component {
 
-    state = { currentAGT: 90, currentBOK: 30, currentSPIN: 18, currentPKT: 305 };
+    state = { currentAGT: 0, currentBOK: 0, currentSPIN: 0, currentPKT: 0 };
+    s = 0;
+
+    checkAPI = () => {
+        var s = this.s;
+        console.log(s);
+        const BASE_URL = "http://localhost:8000/api/itemdetection/";
+        axios.get(BASE_URL + s).then(res => {
+            if (res.data != null) {
+                for (let i = 0; i < res.data.length; i++) {
+                    var station = res.data[i].station;
+                    console.log(station);            
+                    switch (station) {
+                        case "AGT":
+                            this.setState({currentAGT: this.state.currentAGT + 1});
+                            break;
+                        case "BOK":
+                            this.setState({currentBOK: this.state.currentBOK + 1});
+                            break;
+                        case "SPIN":
+                            this.setState({currentSPIN: this.state.currentSPIN + 1});
+                            break;
+                        case "PKT":
+                            this.setState({currentPKT: this.state.currentPKT + 1});
+                            break;
+                    }
+                }           
+            }
+        });
+        if (s > 113) {
+            clearInterval(this.interval);
+        }
+        else {
+            s++;
+            this.s = s;
+        }
+    }
 
     setGraphWidths = () => {
 
@@ -49,6 +86,13 @@ class Flow extends React.Component {
         document.documentElement.style.setProperty('--current-bok', `${currentBOK_width}%`)
         document.documentElement.style.setProperty('--current-spin', `${currentSPIN_width}%`)
         document.documentElement.style.setProperty('--current-pkt', `${currentPKT_width}%`)
+
+        console.log(this.state);
+    }
+
+    componentDidMount() {
+        this.interval = window.setInterval(this.checkAPI, 1000);
+        //this.checkAPI();
     }
 
     render() {

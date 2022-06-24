@@ -4,24 +4,10 @@
     backdrop-filter: blur(6px);
 }
 
-.header {
+.inputLine {
     width: 70%;
-    border-bottom: 1px solid #ADB5C5;
-    margin: 0 auto;
+    margin: 20px auto;
     display: flex;
-    padding: 10px 5%;
-}
-
-.header p {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
-    color: #ED8C00;
-}
-
-.header .rightp {
-    margin-left: auto;
 }
 
 .Station-main input {
@@ -32,5 +18,24 @@
     color: #ADB5C5;
     background: rgba(255, 255, 255, 0.5);
     border: 2px solid #ADB5C5;
+    padding: 10px 5px;
     border-radius: 10px;
+    width: 60px;
+}
+
+.Station-main label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #3440B6;
+    margin: auto;
+    margin-left: 0;
+}
+
+.submitButton{
+    position: absolute;
+    left: 50vw;
+    bottom: 15vh;
+    transform: translateX(-50%);
 }

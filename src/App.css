@@ -38,10 +38,31 @@ padding: 10px;
   line-height: 19px;
   color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .Disabled{
   margin-top: 50px;
   opacity: 0.6;
   pointer-events: none;
+}
+
+.header {
+    width: 70%;
+    border-bottom: 1px solid #ADB5C5;
+    margin: 0 auto;
+    display: flex;
+    padding: 10px 5%;
+}
+
+.header p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #ED8C00;
+}
+
+.header .rightp {
+    margin-left: auto;
 }

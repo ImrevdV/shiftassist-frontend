@@ -36,4 +36,9 @@
     color: white;
     text-decoration: none;
     cursor: pointer;
+    transition: linear 0.2s;
+}
+
+.Guide-main button:hover{
+    background: #00A1E1;
 }

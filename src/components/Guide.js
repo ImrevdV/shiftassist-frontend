@@ -34,9 +34,11 @@ class Guide extends React.Component {
               </nav>
               <h2> {this.state.title}</h2>
               <p> {this.state.description}</p>
-              <button type="button" onClick={this.showFirst}>1</button>
-              <button type="button" onClick={this.showSecond}>2</button>
-              <button type="button" onClick={this.showThird}>3</button>
+              <div className="buttons">
+                <button type="button" onClick={this.showFirst}>1</button>
+                <button type="button" onClick={this.showSecond}>2</button>
+                <button type="button" onClick={this.showThird}>3</button>
+              </div>             
           </main>
         );
     }

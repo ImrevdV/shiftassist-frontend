@@ -42,3 +42,10 @@
 .Guide-main button:hover{
     background: #00A1E1;
 }
+
+.Guide-main .buttons {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}

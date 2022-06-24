@@ -23,6 +23,16 @@
     width: 60px;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .Station-main label {
     font-style: normal;
     font-weight: 400;

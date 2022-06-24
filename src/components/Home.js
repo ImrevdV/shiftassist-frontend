@@ -69,6 +69,7 @@ class Home extends React.Component {
                 <a href='/spin' className='Button'>SPIN<i className={sessionStorage.getItem('SPINchecked')}></i></a>
                 <a href='/pkt' className='Button'>PKT<i className={sessionStorage.getItem('PKTchecked')}></i></a>
                 <a href='/flow' className={sessionStorage.getItem('toggleDisabled')}>Current Flow</a>
+                <a href='/guide' className='Button'>Help</a>
             </main>
         );
     }

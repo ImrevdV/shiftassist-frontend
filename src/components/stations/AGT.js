@@ -10,20 +10,26 @@ class AGT extends React.Component {
         switch (event.target.name) {
             case "sampling":
                 this.setState({sampling: event.target.value});
+                sessionStorage.setItem('AGT_sampling', event.target.value);
                 break;
             case "rc":
                 this.setState({rc: event.target.value});
+                sessionStorage.setItem('AGT_rc', event.target.value);
                 break;
             case "pallets":
                 this.setState({pallets: event.target.value});
+                sessionStorage.setItem('AGT_pallets', event.target.value);
                 break;
             case "retour":
                 this.setState({retour: event.target.value});
+                sessionStorage.setItem('AGT_retour', event.target.value);
                 break;
         };
-        this.setState({totaal: this.state.sampling * 10 + this.state.rc * 10 + this.state.retour * 10 + this.state.pallets * 11});
-        console.log(this.state.totaal);
-    };
+        this.setState({totaal: this.state.sampling * 10 + this.state.rc * 10 + this.state.retour * 10 + this.state.pallets * 11}, () => {
+            sessionStorage.setItem('AGT_totaal', this.state.totaal);
+        });
+        
+    }
 
     render() {
         return (
@@ -37,19 +43,19 @@ class AGT extends React.Component {
                 </header>
                 <section className='inputLine'>
                     <label htmlFor="sampling">Sampling</label>
-                    <input type="number" id="sampling" name="sampling" min="0" max="999" placeholder="0" onChange={this.setValue}></input>
+                    <input type="number" id="sampling" name="sampling" min="0" max="999" placeholder={sessionStorage.getItem('AGT_sampling')} onChange={this.setValue}></input>
                 </section>
                 <section className='inputLine'>
                     <label htmlFor="rc">RC's gericht</label>
-                    <input type="number" id="rc" name="rc" min="0" max="999" placeholder="0" onChange={this.setValue}></input>
+                    <input type="number" id="rc" name="rc" min="0" max="999" placeholder={sessionStorage.getItem('AGT_rc')} onChange={this.setValue}></input>
                 </section>
                 <section className='inputLine'>
                     <label htmlFor="pallets">Pallets gericht</label>
-                    <input type="number" id="pallets" name="pallets" min="0" max="999" placeholder="0" onChange={this.setValue}></input>
+                    <input type="number" id="pallets" name="pallets" min="0" max="999" placeholder={sessionStorage.getItem('AGT_pallets')} onChange={this.setValue}></input>
                 </section>
                 <section className='inputLine'>
                     <label htmlFor="retour">Retouren UD</label>
-                    <input type="number" id="retour" name="retour" min="0" max="999" placeholder="0" onChange={this.setValue}></input>
+                    <input type="number" id="retour" name="retour" min="0" max="999" placeholder={sessionStorage.getItem('AGT_retour')} onChange={this.setValue}></input>
                 </section>
                 <a className='submitButton' href='/home'><button className='Button'>Submit</button></a>
             </main>

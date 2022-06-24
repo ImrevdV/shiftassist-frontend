@@ -4,12 +4,19 @@ import './Station.css';
 
 class SPIN extends React.Component {
 
-    state = {totaal: 0, rc: 0};
+    state = {totaal: 0, rcg: 0};
 
     setValue = event => {
 
-        this.setState({rc: event.target.value}); 
-        this.setState({totaal: this.state.rc * 10});
+        this.setState({rc: event.target.value}, () => {
+            sessionStorage.setItem('SPIN_rc', event.target.value);
+            this.setState({totaal: this.state.rc * 10}, () => {
+                sessionStorage.setItem('SPIN_totaal', this.state.totaal);
+            });
+        });
+        
+
+        
     }
 
     render() {
@@ -24,7 +31,7 @@ class SPIN extends React.Component {
                 </header>
                 <section className='inputLine'>
                     <label htmlFor="rc">RC's gericht</label>
-                    <input type="number" id="rc" name="rc" min="0" max="999" placeholder="0" onChange={this.setValue}></input>
+                    <input type="number" id="rc" name="rc" min="0" max="999" placeholder={sessionStorage.getItem('SPIN_rc')} onChange={this.setValue}></input>
                 </section>
                 <a className='submitButton' href='/home'><button className='Button'>Submit</button></a>
             </main>

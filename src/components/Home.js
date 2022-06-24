@@ -14,6 +14,7 @@ class Home extends React.Component {
                 <a href='/spin' className='Button'>SPIN</a>
                 <a href='/pkt' className='Button'>PKT</a>
                 <a href='/flow' className='Button'>Current Flow</a>
+                <a href='/guide' className='Button'>Help</a>
             </main>
         );
     }

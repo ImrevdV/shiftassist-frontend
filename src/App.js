@@ -3,6 +3,7 @@ import './App.css';
 
 import Home from './components/Home';
 import Flow from './components/Flow';
+import Guide from './components/Guide';
 import AGT from './components/stations/AGT';
 import BOK from './components/stations/BOK';
 import SPIN from './components/stations/SPIN';
@@ -16,6 +17,9 @@ function App() {
       break
     case "/flow":
       component = <Flow />
+      break
+    case "/guide":
+      component = <Guide />
       break
     case "/agt":
       component = <AGT />

@@ -7,6 +7,11 @@ class Flow extends React.Component {
     state = { currentAGT: 90, currentBOK: 104, currentSPIN: 111, currentPKT: 95 };
 
     setGraphwidths() {
+        console.log("AGT totaal:", sessionStorage.getItem('AGT_totaal'));
+        console.log("BOK totaal:", sessionStorage.getItem('BOK_totaal'));
+        console.log("PKT totaal:", sessionStorage.getItem('PKT_totaal'));
+        console.log("SPIN totaal:", sessionStorage.getItem('SPIN_totaal'));
+
         document.documentElement.style.setProperty('--current-agt', '${this.state.currentAGT}%')
         document.documentElement.style.setProperty('--current-bok', '${this.state.currentAGT}%')
         document.documentElement.style.setProperty('--current-spin', '${this.state.currentAGT}%')
